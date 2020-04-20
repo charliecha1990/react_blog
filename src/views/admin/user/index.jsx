@@ -20,10 +20,10 @@ function AdminUser(props) {
     requestUrl: '/user/list',
     queryParams,
     columns: [
-      { title: 'user name', dataIndex: 'username' },
-      { title: 'email', dataIndex: 'email' },
+      { title: 'User name', dataIndex: 'username' },
+      { title: 'Email', dataIndex: 'email' },
       {
-        title: 'email notice',
+        title: 'Email notice',
         dataIndex: 'notice',
         render: (text, record) => (
           <Switch
@@ -33,7 +33,7 @@ function AdminUser(props) {
         )
       },
       {
-        title: 'banned',
+        title: 'Banned',
         dataIndex: 'disabledDiscuss',
         render: (text, record) => (
           <Switch
@@ -43,20 +43,20 @@ function AdminUser(props) {
         )
       },
       {
-        title: 'type',
+        title: 'Type',
         dataIndex: 'type',
         render: (text, record) => {
           return record.github ? <Tag color='#1890ff'>github user</Tag> : <Tag color='magenta'>blog user</Tag>
         }
       },
       {
-        title: 'creation date',
+        title: 'Creation date',
         dataIndex: 'createdAt',
         sorter: (a, b) => (moment(a.createdAt).isBefore(b.createdAt) ? 1 : -1)
       },
       {
         dataIndex: 'id',
-        title: 'edit',
+        title: 'Edit',
         render: (userId, record) => (
           <Popconfirm
             title='Are you sure？'
@@ -85,13 +85,13 @@ function AdminUser(props) {
     <>
       {/* 检索 */}
       <Form layout='inline' onSubmit={handleSubmit} style={{ marginBottom: 20 }}>
-        <Form.Item label='userName'>
+        <Form.Item label='User Name'>
           {getFieldDecorator('username')(
             <Input placeholder='enter the name' allowClear />
           )}
         </Form.Item>
 
-        <Form.Item label='userType'>
+        <Form.Item label='User Type'>
           {getFieldDecorator('type')(
             <Select style={{ width: 200 }} allowClear>
               {typeMapList.map(item => (
@@ -103,7 +103,7 @@ function AdminUser(props) {
           )}
         </Form.Item>
 
-        <Form.Item label='creationDate'>
+        <Form.Item label='Creation Date'>
           {getFieldDecorator('rangeDate')(
             <DatePicker.RangePicker />
           )}

@@ -2,29 +2,29 @@ const menu = [
   {
     path: '/admin',
     icon: 'home',
-    name: 'home'
+    name: 'Home'
   },
   {
     path: '/admin/article',
     icon: 'switcher',
-    name: 'artilce',
+    name: 'Artilce',
     children: [
       {
         path: '/admin/article/manager',
         icon: 'folder',
-        name: 'manager'
+        name: 'Manager'
       },
       {
         path: '/admin/article/add',
         icon: 'edit',
-        name: 'add'
+        name: 'Add'
       }
     ]
   },
   {
     path: '/admin/user',
     icon: 'user',
-    name: 'user management'
+    name: 'User Management'
   }
 ]
 

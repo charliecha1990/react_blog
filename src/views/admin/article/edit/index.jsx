@@ -23,7 +23,7 @@ function Edit(props) {
 
   const editId = parseInt(props.match.params.id)
 
-  useBreadcrumb([{ link: '/admin/article/manager', name: '文章管理' }, editId ? '编辑文章' : '新增文章'])
+  useBreadcrumb([{ link: '/admin/article/manager', name: 'article management' }, editId ? 'edit' : 'add'])
 
   useEffect(() => {
     // did mounted
