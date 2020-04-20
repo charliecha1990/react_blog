@@ -17,7 +17,7 @@ function AdminHeader(props) {
     <Menu className='menu'>
       <Menu.Item>
         <span onClick={e => history.push('/')}>
-          返回主页
+          Back to Blog
         </span>
       </Menu.Item>
       <Menu.Item>
@@ -26,7 +26,7 @@ function AdminHeader(props) {
             dispatch(loginout())
             history.push('/')
           }}>
-          退出登录
+          Log out
         </span>
       </Menu.Item>
     </Menu>
