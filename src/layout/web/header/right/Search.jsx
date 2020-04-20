@@ -36,7 +36,7 @@ function SearchButton(props) {
         onBlur={handleSubmit}
         onPressEnter={handlePressEnter}
         className='search-input'
-        placeholder='搜索文章'
+        placeholder='Search'
         style={{ width: 200 }}
       />
     </div>

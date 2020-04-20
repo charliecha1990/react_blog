@@ -22,7 +22,7 @@ const { TextArea } = Input
 const Editor = ({ onChange, onSubmit, submitting, value, articleId }) => (
   <div>
     <Form.Item>
-      <TextArea rows={4} placeholder='说点什么...' onChange={onChange} value={value} />
+      <TextArea rows={4} placeholder='say something...' onChange={onChange} value={value} />
     </Form.Item>
     <Form.Item>
       <div className='controls'>
@@ -82,7 +82,7 @@ function Discuss(props) {
 
   function handleSubmit() {
     if (!value) return
-    if (!userInfo.username) return message.warn('您未登陆，请登录后再试。')
+    if (!userInfo.username) return message.warn('Please sign in first...')
 
     setSubmitting(true)
 

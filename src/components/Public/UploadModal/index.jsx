@@ -23,19 +23,19 @@ function UploadModal(props) {
   const columns = [
     {
       dataIndex: 'name',
-      title: '文件名'
+      title: 'file name'
     },
     {
       dataIndex: 'title',
-      title: '标题',
+      title: 'title',
       render: (text, record) => getParsed(record.name).title
     },
     {
       dataIndex: 'exist',
-      title: '动作',
+      title: 'action',
       render: (text, record) => {
-        if (record.status === 'error') return <Tag color='red'>上传失败</Tag>
-        return getParsed(record.name).exist ? <Tag color='gold'>更新</Tag> : <Tag color='green'>插入</Tag>
+        if (record.status === 'error') return <Tag color='red'>Upload fails</Tag>
+        return getParsed(record.name).exist ? <Tag color='gold'>Update</Tag> : <Tag color='green'>插入</Tag>
       }
     },
     {
@@ -48,7 +48,7 @@ function UploadModal(props) {
               const index = fileList.findIndex(file => file.uid === uid)
               fileList.splice(index, 1)
               setFileList([...fileList])
-            }}>删除</a>
+            }}>Delete</a>
         )
       }
     }
@@ -102,7 +102,7 @@ function UploadModal(props) {
     <Modal
       width={760}
       visible={visible}
-      title='导入文章'
+      title='create articles'
       onOk={handleSubmit}
       onCancel={setFalse}
       maskClosable={false}

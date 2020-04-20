@@ -7,58 +7,58 @@ import SvgIcon from '@/components/SvgIcon'
 
 const skills = [
   {
-    label: 'HTML、CSS、Javascript：能熟练开发符合 W3C 标准的页面！',
+    label: 'HTML、CSS、Javascript',
+    rate: 4
+  },
+  {
+    label: 'React',
     rate: 3
   },
   {
-    label: 'react vue 框架：熟练掌握使用！',
-    rate: 3
+    label: ' ES6, OOP Javascript',
+    rate: 4
   },
   {
-    label: ' es6：日常开发必备，以及掌握基本面向对象编程实现！！',
-    rate: 3
-  },
-  {
-    label: 'webpack: 可以对脚手架进行针对性的打包配置！',
+    label: 'webpack',
     rate: 2
   },
   {
-    label: 'node mysql：针对需求可以做到简单的数据库设计、接口的开发与设计！',
-    rate: 2
+    label: 'Node.js, MySQL, MongoDB',
+    rate: 3
   }
 ]
 
 const MyInfo = () => {
   return (
     <>
-      <Divider orientation='left'>博客简述</Divider>
-      <p>本博客使用的技术为 react hooks + antd + koa2 + mysql</p>
+      <Divider orientation='left'>Something to say</Divider>
+      <p>Tech stacks: react hooks + antd + koa2 + mysql</p>
       <p>
-        源码地址为 <Href href='https://github.com/gershonv/react-blog'>github</Href>
-        ，仅供参考，不做商业用途！
+        Source code <Href href=''>github</Href>
+        ，for no commercial purpose
       </p>
 
-      <Divider orientation='left'>关于我</Divider>
+      <Divider orientation='left'>About me</Divider>
 
       <ul className='about-list'>
-        <li>姓名：郭少威</li>
-        <li>学历专业：本科 软件工程</li>
+        <li>Charlie Zha</li>
+        <li>Master of Engineering in Information System Security</li>
         <li>
-          联系方式：
-          <Icon type='qq' /> 434358603
+          Contact me：
+          <Icon type='qq' /> NA
           <Divider type='vertical' />
           <SvgIcon type='iconemail' style={{ marginRight: 5, transform: 'translateY(2px)' }} />
-          <a href='mailto:gershonv@163.com'>gershonv@163.com</a>
+          <a href='mailto:gershonv@163.com'>charliecha1990@gmail.com</a>
         </li>
-        <li>坐标：广州市</li>
-        <li>
-          其他博客地址：
+        <li>Location: Montreal</li>
+        {/* <li>
+          Other Social Links：
           <Href href='https://gershonv.github.io/'>hexo 博客</Href>
           <Divider type='vertical' />
           <Href href='https://juejin.im/user/5acac6c4f265da2378408f92'>掘金主页</Href>
-        </li>
+        </li> */}
         <li>
-          技能
+          Techs
           <ul>
             {skills.map((item, i) => (
               <li key={i}>
@@ -69,18 +69,18 @@ const MyInfo = () => {
           </ul>
         </li>
         <li>
-          其他
+          other
           <ul>
-            <li>常用开发工具： vscode、webstorm、git</li>
-            <li>熟悉的 UI 工具： antd、element-ui、vux</li>
-            <li>良好的代码习惯： 略微代码洁癖、注释规范 jsdoc</li>
+            <li>IDE： VSC</li>
+            <li>UI： Material-ui, antd, Bootstrap</li>
+            <li>Coding style： standard</li>
           </ul>
         </li>
         <li>
-          个人
+          Personal
           <ul>
-            <li>偶尔玩玩游戏、看看书</li>
-            <li>欢迎交流！</li>
+            <li>Basketkball, PUBG</li>
+            <li>join my wechat:  charlie_222</li>
           </ul>
         </li>
       </ul>
