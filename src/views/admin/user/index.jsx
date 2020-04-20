@@ -8,22 +8,22 @@ import useAntdTable from '@/hooks/useAntdTable'
 import useBreadcrumb from '@/hooks/useBreadcrumb'
 
 const typeMapList = [
-  { value: 1, label: 'github 用户' },
-  { value: 2, label: '站内用户' }
+  { value: 1, label: 'github user' },
+  { value: 2, label: 'blog user' }
 ]
 
 function AdminUser(props) {
-  useBreadcrumb(['用户管理'])
+  useBreadcrumb(['user management'])
   const { getFieldDecorator } = props.form
   const [queryParams, setQueryParams] = useState({})
   const { tableProps, updateList, onSearch } = useAntdTable({
     requestUrl: '/user/list',
     queryParams,
     columns: [
-      { title: '用户名', dataIndex: 'username' },
-      { title: '邮箱', dataIndex: 'email' },
+      { title: 'user name', dataIndex: 'username' },
+      { title: 'email', dataIndex: 'email' },
       {
-        title: '邮件通知',
+        title: 'email notice',
         dataIndex: 'notice',
         render: (text, record) => (
           <Switch
@@ -33,7 +33,7 @@ function AdminUser(props) {
         )
       },
       {
-        title: '禁言',
+        title: 'banned',
         dataIndex: 'disabledDiscuss',
         render: (text, record) => (
           <Switch
@@ -43,20 +43,20 @@ function AdminUser(props) {
         )
       },
       {
-        title: '用户类型',
+        title: 'type',
         dataIndex: 'type',
         render: (text, record) => {
-          return record.github ? <Tag color='#1890ff'>github 用户</Tag> : <Tag color='magenta'>站内用户</Tag>
+          return record.github ? <Tag color='#1890ff'>github user</Tag> : <Tag color='magenta'>blog user</Tag>
         }
       },
       {
-        title: '注册时间',
+        title: 'creation date',
         dataIndex: 'createdAt',
         sorter: (a, b) => (moment(a.createdAt).isBefore(b.createdAt) ? 1 : -1)
       },
       {
         dataIndex: 'id',
-        title: '操作',
+        title: 'edit',
         render: (userId, record) => (
           <Popconfirm
             title='Are you sure？'
@@ -85,13 +85,13 @@ function AdminUser(props) {
     <>
       {/* 检索 */}
       <Form layout='inline' onSubmit={handleSubmit} style={{ marginBottom: 20 }}>
-        <Form.Item label='姓名'>
+        <Form.Item label='userName'>
           {getFieldDecorator('username')(
-            <Input placeholder='请输入姓名' allowClear />
+            <Input placeholder='enter the name' allowClear />
           )}
         </Form.Item>
 
-        <Form.Item label='用户类型'>
+        <Form.Item label='userType'>
           {getFieldDecorator('type')(
             <Select style={{ width: 200 }} allowClear>
               {typeMapList.map(item => (
@@ -103,14 +103,14 @@ function AdminUser(props) {
           )}
         </Form.Item>
 
-        <Form.Item label='创建日期'>
+        <Form.Item label='creationDate'>
           {getFieldDecorator('rangeDate')(
             <DatePicker.RangePicker />
           )}
         </Form.Item>
 
         <Form.Item>
-          <Button type='primary' htmlType='submit' style={{ marginRight: 8 }}>检索</Button>
+          <Button type='primary' htmlType='submit' style={{ marginRight: 8 }}>Index</Button>
 
         </Form.Item>
       </Form>
