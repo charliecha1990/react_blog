@@ -59,7 +59,7 @@ function Edit(props) {
   }
 
   function add() {
-    if (!title) return message.warning('标题不能为空！')
+    if (!title) return message.warning('title cannot be empty！')
     axios
       .post('/article', {
         title,
@@ -70,7 +70,7 @@ function Edit(props) {
       })
       .then(res => {
         Modal.confirm({
-          title: '文章创建成功！是否立即查看？',
+          title: 'Artilce created,view it now?',
           onOk: () => props.history.push(`/article/${res.id}`)
         })
       })
@@ -85,7 +85,7 @@ function Edit(props) {
         categories: cateSelectedList
       })
       .then(() => {
-        message.success('更新成功')
+        message.success('Updated')
       })
   }
 
@@ -93,10 +93,10 @@ function Edit(props) {
     <div className='admin-edit-article'>
       <ul className='form-list'>
         <li>
-          <span className='label'>标题：</span>
+          <span className='label'>title：</span>
           <span style={{ flex: 1 }}>
             <Input
-              placeholder='请输入文章标题'
+              placeholder='Please provide the title'
               className='title-input'
               name='title'
               value={title}
@@ -105,7 +105,7 @@ function Edit(props) {
           </span>
         </li>
         <li>
-          <span className='label'>标签：</span>
+          <span className='label'>tag：</span>
           <span>
             <List
               list={tagList}
@@ -116,7 +116,7 @@ function Edit(props) {
           </span>
         </li>
         <li>
-          <span className='label'>分类：</span>
+          <span className='label'>category：</span>
           <span>
             <List
               list={categoryList}
@@ -134,7 +134,7 @@ function Edit(props) {
         size='large'
         disabled={!title}
         className='action-icon'
-        title={editId ? '更新' : '新增'}
+        title={editId ? 'update' : 'add'}
         icon={editId ? 'sync' : 'plus'}
         onClick={() => {
           editId ? update() : add()

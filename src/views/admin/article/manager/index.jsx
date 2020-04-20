@@ -29,11 +29,11 @@ function ArticleManager(props) {
     queryParams,
     columns: [
       {
-        title: '标题',
+        title: 'title',
         dataIndex: 'title'
       },
       {
-        title: '标签',
+        title: 'tag',
         dataIndex: 'tags',
         render: (text, record) => {
           return text.map(d => (
@@ -55,7 +55,7 @@ function ArticleManager(props) {
         }
       },
       {
-        title: 'number of vies',
+        title: 'number of views',
         dataIndex: 'viewCount',
         sorter: (a, b) => b.viewCount - a.viewCount
       },

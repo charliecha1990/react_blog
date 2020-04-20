@@ -11,7 +11,7 @@ import { useListener } from '@/hooks/useBus'
 function PvBreadcurmb(props) {
   const history = useHistory()
   const [list, setList] = useState([])
-  const breadcrumbList = list.length > 0 ? [{ link: '/admin', name: '首页' }].concat(list) : []
+  const breadcrumbList = list.length > 0 ? [{ link: '/admin', name: 'home' }].concat(list) : []
 
   useListener('breadcrumbList', list => setList(list))
 

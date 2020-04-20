@@ -2,29 +2,29 @@ const menu = [
   {
     path: '/admin',
     icon: 'home',
-    name: '首页'
+    name: 'home'
   },
   {
     path: '/admin/article',
     icon: 'switcher',
-    name: '文章',
+    name: 'artilce',
     children: [
       {
         path: '/admin/article/manager',
         icon: 'folder',
-        name: '管理'
+        name: 'manager'
       },
       {
         path: '/admin/article/add',
         icon: 'edit',
-        name: '新增'
+        name: 'add'
       }
     ]
   },
   {
     path: '/admin/user',
     icon: 'user',
-    name: '用户管理'
+    name: 'user management'
   }
 ]
 
