@@ -34,11 +34,7 @@ const config = {
   DATABASE: {
     database: 'blog',
     user: 'root',
-<<<<<<< HEAD
     password: 'ahjx5029971',
-=======
-    password: '!AHjx5029971',
->>>>>>> fc7f44ca73e5cb3156fe0748098c3ecac2940d2b
     options: {
       host: '127.0.0.1', // 连接的 host 地址
       dialect: 'mysql', // 连接到 mysql

@@ -13,7 +13,7 @@ import useAntdTable from '@/hooks/useAntdTable'
 import useBreadcrumb from '@/hooks/useBreadcrumb'
 
 function ArticleManager(props) {
-  useBreadcrumb(['文章管理'])
+  useBreadcrumb(['Article Management'])
 
   const { tagList, categoryList } = useSelector(state => ({
     tagList: state.article.tagList,
@@ -44,7 +44,7 @@ function ArticleManager(props) {
         }
       },
       {
-        title: '分类',
+        title: 'category',
         dataIndex: 'categories',
         render: (text, record) => {
           return text.map(d => (
@@ -55,38 +55,38 @@ function ArticleManager(props) {
         }
       },
       {
-        title: '浏览数',
+        title: 'number of vies',
         dataIndex: 'viewCount',
         sorter: (a, b) => b.viewCount - a.viewCount
       },
       {
-        title: '发布时间',
+        title: 'published at',
         dataIndex: 'createdAt',
         sorter: (a, b) => (moment(a.createdAt).isBefore(b.createdAt) ? 1 : -1)
       },
       {
-        title: '修改时间',
+        title: 'updated at',
         dataIndex: 'updatedAt',
         sorter: (a, b) => (moment(a.updatedAt).isBefore(b.updatedAt) ? 1 : -1)
       },
       {
         dataIndex: 'id',
-        title: '操作',
+        title: 'edit',
         render: (articleId, record) => {
           return (
             <ul className='action-list'>
               <li>
-                <Link to={`/article/${articleId}`}>查看</Link>
+                <Link to={`/article/${articleId}`}>view</Link>
               </li>
               <li>
-                <Link to={{ pathname: `/admin/article/edit/${record.id}`, state: { articleId } }}>编辑</Link>
+                <Link to={{ pathname: `/admin/article/edit/${record.id}`, state: { articleId } }}>edit</Link>
               </li>
               <li>
-                <a onClick={e => output(record.id, record.title)}>导出</a>
+                <a onClick={e => output(record.id, record.title)}>export</a>
               </li>
               <li>
                 <Popconfirm title='Are you sure？' cancelText='No' onConfirm={e => updateList(() => axios.delete(`/article/${articleId}`))}>
-                  <a className='delete-text'>删除</a>
+                  <a className='delete-text'>delete</a>
                 </Popconfirm>
               </li>
             </ul>
@@ -139,12 +139,12 @@ function ArticleManager(props) {
     <div className='admin-article-manager'>
       {/* 检索 */}
       <Form layout='inline' onSubmit={handleSubmit} style={{ marginBottom: 20 }}>
-        <Form.Item label='关键词'>
+        <Form.Item label='key word'>
           {getFieldDecorator('keyword')(
-            <Input placeholder='请输入文章关键词' allowClear />
+            <Input placeholder='type the key word' allowClear />
           )}
         </Form.Item>
-        <Form.Item label='标签'>
+        <Form.Item label='tag'>
           {getFieldDecorator('tag')(
             <Select style={{ width: 200 }} allowClear>
               {tagList.map(item => (
@@ -155,7 +155,7 @@ function ArticleManager(props) {
             </Select>
           )}
         </Form.Item>
-        <Form.Item label='分类'>
+        <Form.Item label='category'>
           {getFieldDecorator('category')(
             <Select style={{ width: 200 }} allowClear>
               {categoryList.map(item => (
@@ -167,9 +167,9 @@ function ArticleManager(props) {
           )}
         </Form.Item>
         <Form.Item>
-          <Button type='primary' htmlType='submit' style={{ marginRight: 8 }}>检索</Button>
+          <Button type='primary' htmlType='submit' style={{ marginRight: 8 }}>index</Button>
           <Button type='primary' onClick={outputAll} style={{ marginRight: 8 }}>
-            导出全部文章
+            export all articles
           </Button>
         </Form.Item>
       </Form>
@@ -178,12 +178,12 @@ function ArticleManager(props) {
         rowSelection={rowSelection}
         footer={() => (
           <>
-            批量操作 <Switch checked={batch} onChange={e => setBatch(prev => !prev)} style={{ marginRight: 8 }} />
+            apply to all <Switch checked={batch} onChange={e => setBatch(prev => !prev)} style={{ marginRight: 8 }} />
 
             {
               batch && (
                 <>
-                  <Button type='primary' size='small' style={{ marginRight: 8 }} disabled={selectedRowKeys.length === 0} onClick={outputSelected}>导出选中项</Button>
+                  <Button type='primary' size='small' style={{ marginRight: 8 }} disabled={selectedRowKeys.length === 0} onClick={outputSelected}>export selected</Button>
                   <Popconfirm
                     title='Are you sure delete the articles?'
                     onConfirm={delList}
@@ -191,7 +191,7 @@ function ArticleManager(props) {
                     okText='Yes'
                     cancelText='No'
                   >
-                    <Button type='danger' size='small' disabled={selectedRowKeys.length === 0}>批量删除</Button>
+                    <Button type='danger' size='small' disabled={selectedRowKeys.length === 0}>delete more</Button>
                   </Popconfirm>
 
                 </>
