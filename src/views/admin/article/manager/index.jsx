@@ -13,7 +13,7 @@ import useAntdTable from '@/hooks/useAntdTable'
 import useBreadcrumb from '@/hooks/useBreadcrumb'
 
 function ArticleManager(props) {
-  useBreadcrumb(['article management'])
+  useBreadcrumb(['Article Management'])
 
   const { tagList, categoryList } = useSelector(state => ({
     tagList: state.article.tagList,
@@ -71,7 +71,7 @@ function ArticleManager(props) {
       },
       {
         dataIndex: 'id',
-        title: 'actions',
+        title: 'edit',
         render: (articleId, record) => {
           return (
             <ul className='action-list'>
