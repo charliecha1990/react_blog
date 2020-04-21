@@ -2,13 +2,7 @@
 
 > 一个及其简洁的个人博客系统、即插即用，如果你想使用这个博客、动动手改改配置即可使用！！
 
-- 前后台分离式开发（项目中也包含博客的后台管理系统），为了方便记录后端开发过程，笔者将后端也一起放在同个项目文件夹中。
-- 博客样式几乎借助于 `antd` 这个优秀的 UI 框架，主打简约风格，是笔者借鉴了 `antd` 官方的风格所设计。
-- 具备了代码高亮、权限管理、第三方 `github` 登录、评论与通知、以及邮件通知功能的个人博客...
-- 具备文件导入导出功能，假如你之前用 `hexo` 博客, 那么你可以直接通过导入 `md` 文件迁移你的文章。
 
-* 我的博客地址: [郭大大的博客](http://47.112.48.225:4002/)
-* 测试博客地址: [测试使用的郭大大的博客](http://47.112.48.225:4003/)) `admin/admin` 为博主账号 小伙伴可以使用看看博客的完整功能！
 
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 [![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
@@ -41,13 +35,6 @@
 
 ## 博客预览
 
-### pc 端
-
-![](https://user-gold-cdn.xitu.io/2019/10/14/16dc944b4cdc4409?w=1908&h=1056&f=png&s=385734)
-
-### 移动端
-
-![](https://user-gold-cdn.xitu.io/2019/9/20/16d4df6fb00c0abf?w=370&h=789&f=png&s=144230)
 
 ## 项目结构
 
@@ -88,7 +75,6 @@
 
 ### 数据库模型
 
-![](https://user-gold-cdn.xitu.io/2019/9/20/16d4e0f97411e6cb?w=660&h=655&f=png&s=340072)
 
 role === 1: 博主用户
 role === 2: 普通用户
@@ -306,6 +292,11 @@ yarn
 yarn dev
 
 ## 安装依赖以及开启开发模式 注意必须先配置好数据库、个人github账户登录名，配置文件在 server/config/index.js
+
+！！！注意新建数据库blog的时候，要使用utf8 编码。
+CREATE DATABASE mydb CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+否则会出现字符集错误。
+
 ## 笔者采用的数据库字符集为 utf8mb4 排序规则 utf8mb4_general_ci
 cd server
 yarn
@@ -343,8 +334,3 @@ tags:
 - 分类：`Javascript`
 - 标签：`Javascript` `ES6`
 
-如果导入标题一样的文件，可以确认是否覆盖原来的文章！
-
-由于太多小伙伴私聊 QQ，故本人建了个群方便交流技术答疑源码，无商业用途，感兴趣的伙伴可以加群 855655742。请勿广告，谢谢。
-
-PS : 觉得不错的伙伴可以给个 star ~~~ 或者 fork 下来看看哦。如果有什么建议，也可以提 issue 哦
