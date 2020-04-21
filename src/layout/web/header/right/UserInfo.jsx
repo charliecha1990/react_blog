@@ -22,17 +22,17 @@ function UserInfo(props) {
     <Menu>
       {role === 1 && (
         <Menu.Item>
-          <span onClick={e => bus.emit('openUploadModal')}>Upload articles</span>
+          <span onClick={e => bus.emit('openUploadModal')}>导入文章</span>
         </Menu.Item>
       )}
       {role === 1 && (
         <Menu.Item>
-          <span onClick={e => props.history.push('/admin')}>Management</span>
+          <span onClick={e => props.history.push('/admin')}>后台管理</span>
         </Menu.Item>
       )}
       <Menu.Item>
         <span className='user-logout' onClick={e => dispatch(loginout())}>
-          Log out
+          退出登录
         </span>
       </Menu.Item>
     </Menu>

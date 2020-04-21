@@ -42,7 +42,7 @@ function SideBar(props) {
 
       {ANNOUNCEMENT.enable && <Alert message={ANNOUNCEMENT.content} type='info' />}
 
-      <Divider orientation='left'>what's up</Divider>
+      <Divider orientation='left'>热门文章</Divider>
       <ul className='article-list'>
         {articleList.map(d => (
           <li key={d.id}>
@@ -51,7 +51,7 @@ function SideBar(props) {
         ))}
       </ul>
 
-      <Divider orientation='left'>tags</Divider>
+      <Divider orientation='left'>标签</Divider>
       <div className='tag-list'>
         {tagList.map((tag, i) => (
           <Tag key={i} color={tag.color}>

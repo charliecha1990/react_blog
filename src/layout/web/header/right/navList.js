@@ -1,22 +1,22 @@
 export default [
   {
     icon: 'home',
-    title: 'Home',
+    title: '首页',
     link: '/'
   },
   {
     icon: 'edit',
-    title: 'Archives',
+    title: '归档',
     link: '/archives'
   },
   {
     icon: 'folder',
-    title: 'Categories',
+    title: '分类',
     link: '/categories'
   },
   {
     icon: 'user',
-    title: 'About',
+    title: '关于',
     link: '/about'
   }
 ]

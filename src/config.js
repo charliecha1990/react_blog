@@ -9,21 +9,21 @@ import MyInfo from '@/views/web/about/MyInfo'
 export const API_BASE_URL = 'http://127.0.0.1:6060'
 
 // project config
-export const HEADER_BLOG_NAME = 'Javascript Playground' // header title 显示的名字
+export const HEADER_BLOG_NAME = '郭大大的博客' // header title 显示的名字
 
 // === sidebar
 export const SIDEBAR = {
   avatar: require('@/assets/images/avatar.jpeg'), // 侧边栏头像
-  title: 'Charlie Zha', // 标题
-  subTitle: 'A place to grow', // 子标题
+  title: '郭大大', // 标题
+  subTitle: '前端打杂人员，略微代码洁癖', // 子标题
   // 个人主页
   homepages: {
     github: {
-      link: 'https://github.com/charliecha1990',
+      link: 'https://github.com/gershonv',
       icon: <Icon type='github' theme='filled' className='homepage-icon' />
     },
     juejin: {
-      link: 'NA',
+      link: 'https://juejin.im/user/5acac6c4f265da2378408f92',
       icon: <SvgIcon type='iconjuejin' className='homepage-icon' />
     }
   }
@@ -53,8 +53,8 @@ export const ANNOUNCEMENT = {
   enable: true, // 是否开启
   content: (
     <>
-      Due to the expiring SSL certificate,please visit
-      <Href href='172.105.98.245:3000'>Latest Blog Link</Href>
+      由于服务器期限将至 / ssl 证书过期 / 域名过期，请访问
+      <Href href='http://47.112.48.225:4002/'>最新的博客地址</Href>
     </>
   )
 }
