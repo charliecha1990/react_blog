@@ -6,7 +6,9 @@ import Href from '@/components/Href'
 import MyInfo from '@/views/web/about/MyInfo'
 
 // API_BASE_URL
-export const API_BASE_URL = 'http://127.0.0.1:6060'
+export const API_BASE_URL = 'http://172.105.98.245:6060'
+
+// export const API_BASE_URL = 'http://127.00.1:6060'
 
 // project config
 export const HEADER_BLOG_NAME = 'Javascript Playground' // header title 显示的名字
