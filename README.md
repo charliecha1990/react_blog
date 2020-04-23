@@ -299,7 +299,7 @@ CREATE DATABASE mydb CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 ## 笔者采用的数据库字符集为 utf8mb4 排序规则 utf8mb4_general_ci
 cd server
-yarn
+npm install  *********后端需要用npm安装依赖
 yarn dev
 
 
