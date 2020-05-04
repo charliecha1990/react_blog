@@ -23,7 +23,7 @@ const config = {
         pass: '123456' // generated ethereal password 授权码 而非 密码
       }
     },
-    subject: '郭大大的博客 - 您的评论获得新的回复！', // 主题
+    subject: 'Charlie的博客 - 您的评论获得新的回复！', // 主题
     text: '您的评论获得新的回复！',
     WEB_HOST: 'http://127.0.0.1:3000' // email callback url
   },
