@@ -18,7 +18,7 @@ import useFetchList from '@/hooks/useFetchList'
 function Preview({ list, showTitle = true }) {
   return (
     <ul className='preview'>
-      {showTitle && <Divider>文章列表</Divider>}
+      {showTitle && <Divider>Posts</Divider>}
       {list.map(item => (
         <li key={item.id}>
           <Link to={`/article/${item.id}`}>{item.title}</Link>
@@ -34,7 +34,7 @@ function NoDataDesc({ keyword }) {
       不存在标题/内容中含有 <span className='keyword'>{keyword}</span> 的文章！
     </span>
   ) : (
-    <span>暂无数据...</span>
+    <span>No data...</span>
   )
 }
 
