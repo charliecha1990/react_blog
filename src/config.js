@@ -7,7 +7,7 @@ import MyInfo from '@/views/web/about/MyInfo'
 
 // API_BASE_URL
 
-const SERVER_IP = '172.105.98.245' // IP address of the deployed server
+export const SERVER_IP = '172.105.98.245' // IP address of the deployed server
 export const API_BASE_URL = `http://${SERVER_IP}:6060`
 
 // export const API_BASE_URL = 'http://127.00.1:6060'
@@ -52,13 +52,16 @@ export const ABOUT = {
   renderMyInfo: <MyInfo /> // 我的介绍 自定义组件 => src/views/web/about/MyInfo.jsx
 }
 
+export const MDN = {
+  link: 'https://developer.mozilla.org/en-US/'
+}
+
 // 公告 announcement
 export const ANNOUNCEMENT = {
   enable: true, // 是否开启
   content: (
     <>
-      Due to the expiring SSL certificate,please visit
-      <Href href='172.105.98.245:3000'>Latest Blog Link</Href>
+      Please add me (charlie_222) in your wechat if you are interested in discussing web technologies
     </>
   )
 }

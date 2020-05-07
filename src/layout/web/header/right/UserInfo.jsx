@@ -54,10 +54,10 @@ function UserInfo(props) {
               size='small'
               style={{ marginRight: 20 }}
               onClick={e => bus.emit('openSignModal', 'login')}>
-              登录
+              Sign In
             </Button>
             <Button ghost type='danger' size='small' onClick={e => bus.emit('openSignModal', 'register')}>
-              注册
+              Register
             </Button>
           </>
         )}

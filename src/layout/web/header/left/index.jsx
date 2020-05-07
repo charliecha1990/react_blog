@@ -32,6 +32,10 @@ const HeaderLeft = props => {
     e.stopPropagation()
   }
 
+  function backHome () {
+    history.push(`/`)
+  }
+
   const menu = (
     <Menu className='header-nav'>
       {navList.map(nav => (
@@ -58,8 +62,8 @@ const HeaderLeft = props => {
 
   return (
     <div className='header-left'>
-      <SvgIcon type='iconblog' style={{ color: '#055796', width: 16, height: 16, transform: 'translateY(-2px)' }} />
-      <span className='blog-name'>{HEADER_BLOG_NAME}</span>
+      {/* <SvgIcon type='iconblog' style={{ color: '#055796', width: 16, height: 16, transform: 'translateY(-2px)' }} /> */}
+      <div className='blog-name' onClick={() => backHome()}>{HEADER_BLOG_NAME}</div>
       <Dropdown
         overlayClassName='header-dropdown'
         trigger={['click']}
