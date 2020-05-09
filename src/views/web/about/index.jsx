@@ -8,7 +8,6 @@ import axios from '@/utils/axios'
 import Discuss from '@/components/Discuss'
 
 import { useMediaQuery } from 'react-responsive'
-import Iphone from '@/components/Iphone'
 
 function About(props) {
   const [commentList, setCommentList] = useState([])
@@ -25,8 +24,7 @@ function About(props) {
 
   return (
     <div className='app-about' style={{ paddingRight: iphoneScreen ? 0 : 20 }}>
-      {/* <Avatar src={SIDEBAR.avatar} /> */}
-      <Iphone/>
+      <Avatar src={SIDEBAR.avatar} />
       <span style={{ paddingLeft: 10 }}>{ABOUT.describe}</span>
       {ABOUT.renderMyInfo || null}
       {ABOUT.discuss && <Discuss articleId={-1} commentList={commentList} setCommentList={setCommentList} />}
