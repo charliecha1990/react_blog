@@ -6,6 +6,6 @@ export const translate = () => {
   message.success(`Translation success`)
   return {
     type: TYPES.LANGUAGE_TRANSLATE,
-    payload: { Home: '主页'}
+    payload: { lan_code: 'ZH'}
   }
 }

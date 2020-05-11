@@ -65,3 +65,19 @@ export const ANNOUNCEMENT = {
     </>
   )
 }
+
+// i18n
+export const LANGUAGE = {
+  ZH: {
+    Home: '主页',
+    Archives: '归档',
+    Categories: '分类',
+    About: '关于我'
+  },
+  EN: {
+    Home: 'Home',
+    Archives: 'Archives',
+    Categories: 'Categories',
+    About: 'About'
+  }
+}

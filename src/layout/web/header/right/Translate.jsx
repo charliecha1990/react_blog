@@ -7,6 +7,7 @@ import { translate } from '@/redux/translate/actions'
 
 function TranslateButton(props) {
   const dispatch = useDispatch()
+  const state = useSelector(state => state.translate)
 
   return (
     <Button type='link' onClick={e => dispatch(translate())}>
